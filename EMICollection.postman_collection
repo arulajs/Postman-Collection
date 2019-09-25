@@ -1,0 +1,51 @@
+{
+	"variables": [],
+	"info": {
+		"name": "EMI Collection",
+		"_postman_id": "172707b7-417d-63c1-b822-aa6aa086de73",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "EMI Management",
+			"request": {
+				"url": "http://localhost:2018/api/emi/management",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"Product\" : [{\r\n\t\t\"Name\" : \"Mobile\",\r\n\t\t\"Price\" : 7500.0,\r\n\t\t\"PurchaseDate\": \"2019-06-26\",\r\n\t\t\"EMIPerc\" : 9,\r\n\t\t\"EMIDuration\" : \"3\"\r\n\t}]\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "EMI Management-GET",
+			"request": {
+				"url": "http://localhost:2018/api/emi/management",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"Product\" : [{\r\n\t\t\"Name\" : \"Mobile\",\r\n\t\t\"Price\" : 7500.0,\r\n\t\t\"PurchaseDate\": \"2019-06-26\",\r\n\t\t\"EMIPerc\" : 9,\r\n\t\t\"EMIDuration\" : \"3\"\r\n\t}]\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
