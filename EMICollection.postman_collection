@@ -76,7 +76,7 @@
 					"script": {
 						"id": "523e8e9b-992b-4362-ad80-8cb6316c1869",
 						"exec": [
-							"tests[\"Status code is 405\"] = responseCode.code === 405;"
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
 						],
 						"type": "text/javascript"
 					}
