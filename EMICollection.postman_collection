@@ -15,7 +15,7 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+							"tests[\"Status eq 200\"] = responseCode.code === 200;\r",
 							"\r",
 							"var jsonresponse = JSON.parse(responseBody);\r",
 							"tests[\"http-method matches POST\"] = jsonresponse.httpMethod === \"POST\";\r",
@@ -50,7 +50,7 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Status code is 405\"] = responseCode.code === 405;\r",
+							"tests[\"Status eq 405\"] = responseCode.code === 405;\r",
 							"\r",
 							"\r",
 							""
@@ -84,7 +84,7 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+							"tests[\"Status eq 200\"] = responseCode.code === 200;"
 						]
 					}
 				}
@@ -115,7 +115,7 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Status code is 200\"] = responseCode.code === 204;"
+							"tests[\"Status eq 204\"] = responseCode.code === 204;"
 						]
 					}
 				}
@@ -146,7 +146,7 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+							"tests[\"Status eq 200\"] = responseCode.code === 200;"
 						]
 					}
 				}
@@ -174,7 +174,7 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+							"tests[\"Status eq 200\"] = responseCode.code === 200;"
 						]
 					}
 				}
@@ -202,7 +202,7 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+							"tests[\"Status eq 200\"] = responseCode.code === 200;\r",
 							"\r",
 							"var jsonresponse = JSON.parse(responseBody);\r",
 							"tests[\"http-method matches POST\"] = jsonresponse.httpMethod === \"POST\";\r",
@@ -234,7 +234,7 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Status code is 200\"] = responseCode.code === 201;\r",
+							"tests[\"Status eq 201\"] = responseCode.code === 201;\r",
 							"\r",
 							"var jsonresponse = JSON.parse(responseBody);\r",
 							"tests[\"http-method matches POST\"] = jsonresponse.httpMethod === \"POST\";\r",
