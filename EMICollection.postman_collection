@@ -1,70 +1,140 @@
 {
+	"variables": [],
 	"info": {
-		"_postman_id": "9ef4e200-fff1-4794-8323-6318d6c1ec7f",
 		"name": "EMI Collection",
+		"_postman_id": "aba973ef-0bc4-8749-8f3f-cc74641599ff",
+		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "EMI Management",
+			"name": "EMI Management-POST",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "a71f8fe8-321d-4a89-ab91-13779e6b22f5",
+						"type": "text/javascript",
 						"exec": [
-							"tests[\"Status code is 201\"] = responseCode.code === 201;",
-							"",
-							"var jsonresponse = JSON.parse(responseBody);",
-							"tests[\"status matches response\"] = jsonresponse.status === \"success\";"
-						],
-						"type": "text/javascript"
+							"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"var jsonresponse = JSON.parse(responseBody);\r",
+							"tests[\"http-method matches POST\"] = jsonresponse.httpMethod === \"POST\";\r",
+							""
+						]
 					}
 				}
 			],
 			"request": {
+				"url": "http://172.16.124.15:2019/api/emi/management",
 				"method": "POST",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json"
+						"value": "application/json",
+						"description": ""
 					}
 				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n\t\"Product\" : [{\r\n\t\t\"Name\" : \"Mobile\",\r\n\t\t\"Price\" : 7500.0,\r\n\t\t\"PurchaseDate\": \"2019-06-26\",\r\n\t\t\"EMIPerc\" : 9,\r\n\t\t\"EMIDuration\" : \"3\"\r\n\t}]\r\n}"
 				},
-				"url": "http://172.16.124.15:2018/api/emi/management"
+				"description": ""
 			},
 			"response": []
 		},
 		{
-			"name": "EMI Management url",
+			"name": "EMI Management-POST-Failure",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "f66bafa0-7b66-4148-81bb-783ef7f4ff6b",
+						"type": "text/javascript",
 						"exec": [
-							"tests[\"Status code is 404\"] = responseCode.code === 404;"
-						],
-						"type": "text/javascript"
+							"tests[\"Status code is 405\"] = responseCode.code === 405;\r",
+							"\r",
+							"\r",
+							""
+						]
 					}
 				}
 			],
 			"request": {
-				"method": "POST",
+				"url": "http://172.16.124.15:2019/api/emi/management",
+				"method": "PATCH",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json"
+						"value": "application/json",
+						"description": ""
 					}
 				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n\t\"Product\" : [{\r\n\t\t\"Name\" : \"Mobile\",\r\n\t\t\"Price\" : 7500.0,\r\n\t\t\"PurchaseDate\": \"2019-06-26\",\r\n\t\t\"EMIPerc\" : 9,\r\n\t\t\"EMIDuration\" : \"3\"\r\n\t}]\r\n}"
 				},
-				"url": "http://172.16.124.15:2018/api/emi/managment"
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "EMI Management-PUT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://172.16.124.15:2019/api/emi/management",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"Product\" : [{\r\n\t\t\"Name\" : \"Mobile\",\r\n\t\t\"Price\" : 7500.0,\r\n\t\t\"PurchaseDate\": \"2019-06-26\",\r\n\t\t\"EMIPerc\" : 9,\r\n\t\t\"EMIDuration\" : \"3\"\r\n\t}]\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "EMI Management-PUT-Failure",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 204;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://172.16.124.15:2019/api/emi/management",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"Product\" : [{\r\n\t\t\"Name\" : \"Mobile\",\r\n\t\t\"Price\" : 7500.0,\r\n\t\t\"PurchaseDate\": \"2019-06-26\",\r\n\t\t\"EMIPerc\" : 9,\r\n\t\t\"EMIDuration\" : \"3\"\r\n\t}]\r\n}"
+				},
+				"description": ""
 			},
 			"response": []
 		},
@@ -74,26 +144,119 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "523e8e9b-992b-4362-ad80-8cb6316c1869",
+						"type": "text/javascript",
 						"exec": [
 							"tests[\"Status code is 200\"] = responseCode.code === 200;"
-						],
-						"type": "text/javascript"
+						]
 					}
 				}
 			],
 			"request": {
+				"url": "http://172.16.124.15:2019/api/emi/management",
 				"method": "GET",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json"
+						"value": "application/json",
+						"description": ""
 					}
 				],
-				"url": "http://172.16.124.15:2018/api/emi/management"
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "EMI Management-DELETE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://172.16.124.15:2019/api/emi/management",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "EMI Management-GET-Failure",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+							"\r",
+							"var jsonresponse = JSON.parse(responseBody);\r",
+							"tests[\"http-method matches POST\"] = jsonresponse.httpMethod === \"POST\";\r",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://172.16.124.15:2019/api/emi/management",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "EMI Management-DELETE-Failure",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 201;\r",
+							"\r",
+							"var jsonresponse = JSON.parse(responseBody);\r",
+							"tests[\"http-method matches POST\"] = jsonresponse.httpMethod === \"POST\";\r",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://172.16.124.15:2019/api/emi/management",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
 			},
 			"response": []
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
