@@ -115,13 +115,13 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Status eq 404\"] = responseCode.code === 404;"
+							"tests[\"Status eq 204\"] = responseCode.code === 204;"
 						]
 					}
 				}
 			],
 			"request": {
-				"url": "http://172.16.124.15:2019/api/emi/managemen",
+				"url": "http://172.16.124.15:2019/api/emi/management",
 				"method": "PUT",
 				"header": [
 					{
@@ -205,7 +205,7 @@
 							"tests[\"Status eq 200\"] = responseCode.code === 200;\r",
 							"\r",
 							"var jsonresponse = JSON.parse(responseBody);\r",
-							"tests[\"http-method matches GET\"] = jsonresponse.httpMethod === \"GET\";\r",
+							"tests[\"http-method matches POST\"] = jsonresponse.httpMethod === \"POST\";\r",
 							""
 						]
 					}
@@ -234,15 +234,17 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Status eq 404\"] = responseCode.code === 404;\r",
+							"tests[\"Status eq 201\"] = responseCode.code === 201;\r",
 							"\r",
+							"var jsonresponse = JSON.parse(responseBody);\r",
+							"tests[\"http-method matches POST\"] = jsonresponse.httpMethod === \"POST\";\r",
 							""
 						]
 					}
 				}
 			],
 			"request": {
-				"url": "http://172.16.124.15:2019/api/emi/managemen",
+				"url": "http://172.16.124.15:2019/api/emi/management",
 				"method": "DELETE",
 				"header": [
 					{
